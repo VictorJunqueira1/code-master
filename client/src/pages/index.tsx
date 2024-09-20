@@ -1,16 +1,14 @@
 "use client"
 
-import { NavigationDesktop } from "@/components/Navigation/NavigationDesktop";
-import { NavigationMobile } from "@/components/Navigation/NavigationMobile";
+import MainLayout from "@/components/Navigation/MainLayout";
+
 
 export const Home = () => {
     return (
         <>
-            <NavigationMobile />
-            <NavigationDesktop />
-            <main className="p-4 lg:ml-52">
-                Hello, home!
-            </main>
+            <MainLayout>
+                ...
+            </MainLayout>
         </>
     )
 }
