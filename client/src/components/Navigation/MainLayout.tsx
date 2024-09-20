@@ -67,45 +67,46 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
                             </ul>
                         </div>
                     </aside>
-                    <main className="min-h-screen p-4">
+                    <main className="min-h-screen p-4 w-full bg-slate-950">
                         {children}
                     </main>
                 </div>
             </div>
-
-            <div className="flex items-center justify-between px-4 py-2 bg-white shadow-md lg:hidden dark:bg-slate-950">
-                <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white">
-                    Code Master
-                </Link>
-                <Sheet>
-                    <SheetTrigger>
-                        <span className="p-3">
-                            <Menu size={24} className="text-gray-900 dark:text-white" />
-                        </span>
-                    </SheetTrigger>
-                    <SheetContent className="max-h-screen overflow-y-auto">
-                        <SheetHeader className="flex flex-row justify-between mt-6">
-                            <SheetTitle className="flex items-center ml-3">Menu</SheetTitle>
-                            <ModeToggle />
-                        </SheetHeader>
-                        <div className="mt-4 space-y-4">
-                            {components.map((component) => (
-                                <Link
-                                    key={component.title}
-                                    href={component.href}
-                                    className="block p-3 text-lg font-semibold dark:text-white text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-blue-600 duration-200 rounded-md"
-                                >
-                                    {component.title}
-                                    <p className="text-sm dark:text-gray-400 text-gray-500">{component.description}</p>
-                                </Link>
-                            ))}
-                        </div>
-                    </SheetContent>
-                </Sheet>
+            <div className="block md:hidden min-h-screen">
+                <div className="flex items-center justify-between px-4 py-2 bg-white shadow-md lg:hidden dark:bg-slate-950">
+                    <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white">
+                        Code Master
+                    </Link>
+                    <Sheet>
+                        <SheetTrigger>
+                            <span className="p-3">
+                                <Menu size={24} className="text-gray-900 dark:text-white" />
+                            </span>
+                        </SheetTrigger>
+                        <SheetContent className="max-h-screen overflow-y-auto">
+                            <SheetHeader className="flex flex-row justify-between mt-6">
+                                <SheetTitle className="flex items-center ml-3">Menu</SheetTitle>
+                                <ModeToggle />
+                            </SheetHeader>
+                            <div className="mt-4 space-y-4">
+                                {components.map((component) => (
+                                    <Link
+                                        key={component.title}
+                                        href={component.href}
+                                        className="block p-3 text-lg font-semibold dark:text-white text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-blue-600 duration-200 rounded-md"
+                                    >
+                                        {component.title}
+                                        <p className="text-sm dark:text-gray-400 text-gray-500">{component.description}</p>
+                                    </Link>
+                                ))}
+                            </div>
+                        </SheetContent>
+                    </Sheet>
+                </div>
+                <main className="min-h-screen p-4 w-full bg-slate-950">
+                    {children}
+                </main>
             </div>
-            <main className="min-h-screen p-4">
-                {children}
-            </main>
         </div>
     );
 };
