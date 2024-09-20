@@ -10,6 +10,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet";
+import { ModeToggle } from "../button-theme";
 
 const components = [
     { title: "Dashboard", href: "/", description: "Volte ao início da página." },
@@ -32,15 +33,16 @@ export const NavigationMobile = () => {
                     </span>
                 </SheetTrigger>
                 <SheetContent className="max-h-screen overflow-y-auto">
-                    <SheetHeader>
-                        <SheetTitle>Menu</SheetTitle>
+                    <SheetHeader className="flex flex-row justify-between mt-6">
+                        <SheetTitle className="flex items-center ml-3">Menu</SheetTitle>
+                        <ModeToggle />
                     </SheetHeader>
                     <div className="mt-4 space-y-4">
                         {components.map((component) => (
                             <Link
                                 key={component.title}
                                 href={component.href}
-                                className="block p-3 text-lg font-semibold dark:text-white text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+                                className="block p-3 text-lg font-semibold dark:text-white text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-blue-600 duration-200 rounded-md"
                             >
                                 {component.title}
                                 <p className="text-sm dark:text-gray-400 text-gray-500">{component.description}</p>

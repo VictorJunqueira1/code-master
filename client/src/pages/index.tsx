@@ -8,7 +8,9 @@ export const Home = () => {
         <>
             <NavigationMobile />
             <NavigationDesktop />
-            <h1>Olá, Next.js!</h1>
+            <main className="p-4 lg:ml-52">
+                Hello, home!
+            </main>
         </>
     )
 }
