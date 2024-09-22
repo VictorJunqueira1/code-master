@@ -3,40 +3,49 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import MainLayout from "./Navigation/MainLayout";
 
 const CoursesCarousel = () => {
   const categories = [
     {
       title: "[Formações] Front-End",
       courses: [
-        { name: "HTML", link: "", svg: "https://simpleicons.org/icons/html5.svg" },
-        { name: "CSS", link: "", svg: "https://simpleicons.org/icons/css3.svg" },
-        { name: "JavaScript", link: "", svg: "https://simpleicons.org/icons/javascript.svg" },
-        { name: "Git/Github", link: "", svg: "https://simpleicons.org/icons/git.svg" },
-        { name: "TypeScript", link: "", svg: "https://simpleicons.org/icons/typescript.svg" },
-        { name: "Tailwind", link: "", svg: "https://simpleicons.org/icons/tailwindcss.svg" },
-        { name: "React/Next.js", link: "", svg: "https://simpleicons.org/icons/react.svg" },
+        { name: "HTML", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+        { name: "CSS", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+        { name: "JavaScript", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+        { name: "Git/Github", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+        { name: "TypeScript", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+        { name: "Tailwind", link: "", svg: "https://www.svgrepo.com/show/354431/tailwindcss-icon.svg" },
+        { name: "React", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Next.js", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
       ],
     },
     {
       title: "[Formações] Back-End",
       courses: [
-        { name: "Node.js", link: "", svg: "https://simpleicons.org/icons/nodejs.svg" },
-        { name: "Express.js", link: "", svg: "https://simpleicons.org/icons/express.svg" },
-        { name: "Nest.js", link: "", svg: "https://simpleicons.org/icons/nestjs.svg" },
-        { name: "Python", link: "", svg: "https://simpleicons.org/icons/python.svg" },
-        { name: "Firebase", link: "", svg: "https://simpleicons.org/icons/firebase.svg" },
-        { name: "C# .NET", link: "", svg: "https://simpleicons.org/icons/csharp.svg" },
+        { name: "Node.js", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+        { name: "Express.js", link: "", svg: "https://www.svgrepo.com/show/330398/express.svg" },
+        { name: "Nest.js", link: "", svg: "https://nestjs.com/img/logo-small.svg" },
+        { name: "Python", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+        { name: "Firebase", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+        { name: "C# .NET", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" },
       ],
     },
     {
       title: "[Formações] Banco de Dados",
       courses: [
-        { name: "MySQL", link: "", svg: "https://simpleicons.org/icons/mysql.svg" },
-        { name: "PostgreSQL", link: "", svg: "https://simpleicons.org/icons/postgresql.svg" },
-        { name: "MongoDB", link: "", svg: "https://simpleicons.org/icons/mongodb.svg" },
-        { name: "Redis", link: "", svg: "https://simpleicons.org/icons/redis.svg" },
+        { name: "MySQL", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+        { name: "PostgreSQL", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+        { name: "MongoDB", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+        { name: "Redis", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+      ],
+    },
+    {
+      title: "[Formações] Projetos",
+      courses: [
+        { name: "Nome do Projeto", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+        { name: "Nome do Projeto", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+        { name: "Nome do Projeto", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+        { name: "Nome do Projeto", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
       ],
     },
   ];
@@ -49,18 +58,20 @@ const CoursesCarousel = () => {
           <Carousel className="w-full">
             <CarouselContent className="flex gap-2">
               {category.courses.map((course, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <Link href={""} className="cursor-pointer">
+                <CarouselItem key={index} className="basis-1/2 md:basis-1/3 xl:basis-1/4">
+                  <Link href={course.link} className="cursor-pointer">
                     <Card className="h-full">
-                      <CardContent className="p-4 flex flex-col items-center">
+                      <CardContent className="p-4 flex flex-col items-center hover:scale-110 duration-200 transition-all">
                         <Image
                           src={course.svg}
                           alt={course.name}
                           width={120}
-                          height={60}
-                          className="rounded-md light:invert-0 dark:invert"
+                          height={10}
+                          className="rounded-md"
                         />
-                        <h3 className="mt-2 text-center text-lg font-semibold text-black dark:text-white">{course.name}</h3>
+                        <h3 className="mt-2 text-center text-lg font-semibold text-black dark:text-white">
+                          {course.name}
+                        </h3>
                       </CardContent>
                     </Card>
                   </Link>

@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Grid, NotebookPen, LibraryBig, Headset, DoorOpen, Menu } from "lucide-react";
-import { ModeToggle } from "../button-theme";
+import { ModeToggle } from "../ModeToggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
     Sheet,
@@ -49,9 +49,9 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
                     </div>
                 </nav>
                 <div className="flex">
-                    <aside id="logo-sidebar" className="w-52 min-h-screen pt-4 bg-white border-r border-gray-200 dark:bg-gray-950 dark:border-gray-700">
+                    <aside id="logo-sidebar" className="w-60 min-h-screen pt-4 bg-white border-r border-gray-200 dark:bg-gray-950 dark:border-gray-700">
                         <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-950">
-                            <ul className="space-y-2 font-medium">
+                            <ul className="space-y-2 font-semibold">
                                 {components.map(component => (
                                     <li key={component.title}>
                                         <Link href={component.href} className={`flex duration-300 transition-all items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${isActive(component.href) ? "bg-blue-600 text-white dark:bg-blue-800" : "dark:hover:text-blue-500 hover:text-blue-500"}`}>
@@ -67,7 +67,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
                             </ul>
                         </div>
                     </aside>
-                    <main className="min-h-screen p-4 w-full dark:bg-slate-950">
+                    <main className="min-h-screen p-4 w-full bg-gray-100 dark:bg-slate-950">
                         {children}
                     </main>
                 </div>
@@ -103,7 +103,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
                         </SheetContent>
                     </Sheet>
                 </div>
-                <main className="min-h-screen p-4 w-full dark:bg-slate-950">
+                <main className="min-h-screen p-4 w-full bg-gray-100 dark:bg-slate-950">
                     {children}
                 </main>
             </div>
