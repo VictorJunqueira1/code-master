@@ -6,19 +6,35 @@ import Image from "next/image";
 const CourseCarousel = () => {
   const categories = [
     {
-      title: "[Formações] FullStack",
+      title: "[Formações] Front-End",
       courses: [
-        { name: "JavaScript", image: "/images/javascript.png" },
-        { name: "Python", image: "/images/python.png" },
-        { name: "Java", image: "/images/java.png" },
+        { name: "HTML", svg: "https://simpleicons.org/icons/html5.svg" },
+        { name: "CSS", svg: "https://simpleicons.org/icons/css3.svg" },
+        { name: "JavaScript", svg: "https://simpleicons.org/icons/javascript.svg" },
+        { name: "Git/Github", svg: "https://simpleicons.org/icons/git.svg" },
+        { name: "TypeScript", svg: "https://simpleicons.org/icons/typescript.svg" },
+        { name: "Tailwind", svg: "https://simpleicons.org/icons/tailwindcss.svg" },
+        { name: "React/Next.js", svg: "https://simpleicons.org/icons/react.svg" },
       ],
     },
     {
-      title: "[Formações] FullStack 2",
+      title: "[Formações] Back-End",
       courses: [
-        { name: "JavaScript", image: "/images/javascript.png" },
-        { name: "Python", image: "/images/python.png" },
-        { name: "Java", image: "/images/java.png" },
+        { name: "Node.js", svg: "https://simpleicons.org/icons/nodejs.svg" },
+        { name: "Express.js", svg: "https://simpleicons.org/icons/express.svg" },
+        { name: "Nest.js", svg: "https://simpleicons.org/icons/nestjs.svg" },
+        { name: "Python", svg: "https://simpleicons.org/icons/python.svg" },
+        { name: "Firebase", svg: "https://simpleicons.org/icons/firebase.svg" },
+        { name: "C# .NET", svg: "https://simpleicons.org/icons/csharp.svg" },
+      ],
+    },
+    {
+      title: "[Formações] Banco de Dados",
+      courses: [
+        { name: "MySQL", svg: "https://simpleicons.org/icons/mysql.svg" },
+        { name: "PostgreSQL", svg: "https://simpleicons.org/icons/postgresql.svg" },
+        { name: "MongoDB", svg: "https://simpleicons.org/icons/mongodb.svg" },
+        { name: "Redis", svg: "https://simpleicons.org/icons/redis.svg" },
       ],
     },
   ];
@@ -28,20 +44,14 @@ const CourseCarousel = () => {
       {categories.map((category) => (
         <div key={category.title} className="space-y-5">
           <h2 className="text-2xl font-semibold">{category.title}</h2>
-          <Carousel
-            opts={{
-              align: "start",
-              slidesToScroll: 1, 
-            }}
-            className="w-full"
-          >
+          <Carousel className="w-full">
             <CarouselContent className="flex gap-4">
               {category.courses.map((course, index) => (
-                <CarouselItem key={index} className="w-1/3">
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <Card className="h-full">
                     <CardContent className="p-4 flex flex-col items-center">
                       <Image
-                        src={course.image}
+                        src={course.svg}
                         alt={course.name}
                         width={120}
                         height={60}

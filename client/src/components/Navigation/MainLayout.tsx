@@ -72,7 +72,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
                     </main>
                 </div>
             </div>
-            <div className="block md:hidden min-h-screen">
+            <div className="block lg:hidden min-h-screen">
                 <div className="flex items-center justify-between px-4 py-2 bg-white shadow-md lg:hidden dark:bg-slate-950">
                     <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white">
                         Code Master
