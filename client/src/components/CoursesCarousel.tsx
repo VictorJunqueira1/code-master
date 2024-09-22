@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const CoursesCarousel = () => {
+  const futureProjectIcon = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M10 17l5-5-5-5v3H4v4h6v3zm8-15v18H2V2h16zm-2 2H4v14h12V4z' fill='%23000000'/%3E%3C/svg%3E";
+
   const categories = [
     {
       title: "[Formações] Front-End",
@@ -42,10 +44,12 @@ const CoursesCarousel = () => {
     {
       title: "[Formações] Projetos",
       courses: [
-        { name: "Nome do Projeto", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-        { name: "Nome do Projeto", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-        { name: "Nome do Projeto", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-        { name: "Nome do Projeto", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+        { name: "Calculadora em JS", link: "", svg: futureProjectIcon },
+        { name: "Gerenciamento de Estoque", link: "", svg: futureProjectIcon },
+        { name: "CRUD em .NET", link: "", svg: futureProjectIcon },
+        { name: "Análise de Dados em Python", link: "", svg: futureProjectIcon },
+        { name: "Portfólio com Next.js", link: "", svg: futureProjectIcon },
+        { name: "Mário Game com Firebase", link: "", svg: futureProjectIcon },
       ],
     },
   ];
@@ -63,7 +67,7 @@ const CoursesCarousel = () => {
                     <Card className="h-full">
                       <CardContent className="p-4 flex flex-col items-center hover:scale-110 duration-200 transition-all">
                         <Image
-                          src={course.svg}
+                          src={course.svg || futureProjectIcon}
                           alt={course.name}
                           width={120}
                           height={10}
