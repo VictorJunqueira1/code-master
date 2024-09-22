@@ -16,10 +16,10 @@ import {
 
 const components = [
     { title: "Dashboard", href: "/", description: "Volte ao início da página." },
-    { title: "Anotações", href: "/anotacoes", description: "Confira as suas anotações." },
-    { title: "Cursos", href: "/cursos", description: "Veja os cursos disponíveis para você." },
-    { title: "Suporte", href: "/suporte", description: "Entre em contato com nosso suporte." },
-    { title: "Sair", href: "/sair", description: "Encerre a sua sessão." }
+    { title: "Anotações", href: "/anotations", description: "Confira as suas anotações." },
+    { title: "Cursos", href: "/courses", description: "Veja os cursos disponíveis para você." },
+    { title: "Suporte", href: "/support", description: "Entre em contato com nosso suporte." },
+    { title: "Sair", href: "/exit", description: "Encerre a sua sessão." }
 ];
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
@@ -73,7 +73,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
                 </div>
             </div>
             <div className="block lg:hidden min-h-screen">
-                <div className="flex items-center justify-between px-4 py-2 bg-white shadow-md lg:hidden dark:bg-slate-950">
+                <div className="flex items-center justify-between px-4 py-2 bg-white shadow-md border-b border-gray-200 dark:border-gray-700 lg:hidden dark:bg-slate-950">
                     <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white">
                         Code Master
                     </Link>

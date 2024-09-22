@@ -1,13 +1,13 @@
 "use client"
 
-import CourseCarousel from "@/components/CarouselCard";
+import CoursesCarousel from "@/components/CoursesCarousel";
 import MainLayout from "@/components/Navigation/MainLayout";
 
 export const Home = () => {
     return (
         <>
             <MainLayout>
-                <CourseCarousel />
+                <CoursesCarousel />
             </MainLayout>
         </>
     )
