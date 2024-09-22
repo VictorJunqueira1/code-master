@@ -67,7 +67,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
                             </ul>
                         </div>
                     </aside>
-                    <main className="min-h-screen p-4 w-full bg-slate-950">
+                    <main className="min-h-screen p-4 w-full dark:bg-slate-950">
                         {children}
                     </main>
                 </div>
@@ -103,7 +103,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
                         </SheetContent>
                     </Sheet>
                 </div>
-                <main className="min-h-screen p-4 w-full bg-slate-950">
+                <main className="min-h-screen p-4 w-full dark:bg-slate-950">
                     {children}
                 </main>
             </div>

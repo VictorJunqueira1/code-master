@@ -1,63 +1,65 @@
-import React from 'react';
+import React from "react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import Image from "next/image";
 
-interface Movie {
-  id: number;
-  courseTitle: string;
-  title: string;
-  image: string;
-}
+const CourseCarousel = () => {
+  const categories = [
+    {
+      title: "[Formações] FullStack",
+      courses: [
+        { name: "JavaScript", image: "/images/javascript.png" },
+        { name: "Python", image: "/images/python.png" },
+        { name: "Java", image: "/images/java.png" },
+      ],
+    },
+    {
+      title: "[Formações] FullStack 2",
+      courses: [
+        { name: "JavaScript", image: "/images/javascript.png" },
+        { name: "Python", image: "/images/python.png" },
+        { name: "Java", image: "/images/java.png" },
+      ],
+    },
+  ];
 
-const movies: Movie[] = [
-  { id: 1, courseTitle: "Back-End", title: 'Curso de C#', image: '/images/csharp.png' },
-  { id: 2, courseTitle: "Back-End", title: 'Curso de Java', image: '/images/java.png' },
-  { id: 3, courseTitle: "Back-End", title: 'Curso de Python', image: '/images/python.png' },
-  { id: 4, courseTitle: "Back-End", title: 'Curso de JavaScript', image: '/images/javascript.png' },
-  { id: 5, courseTitle: "Back-End", title: 'Curso de Go', image: '/images/go.png' },
-];
-
-const MovieCard: React.FC<Movie> = ({ title, courseTitle, image }) => (
-  <div className="relative m-4 transition-transform transform hover:scale-110">
-    <span className="block text-lg font-semibold text-white">{courseTitle}</span>
-    <img src={image} alt={title} className="w-48 h-72 rounded-lg shadow-lg" />
-    <div className="absolute bottom-2 left-2 text-white bg-black bg-opacity-70 p-2 rounded">
-      {title}
-    </div>
-  </div>
-);
-
-const MovieCarousel: React.FC = () => {
   return (
-    <Carousel
-      opts={{
-        align: "start",
-      }}
-      className="w-full max-w-screen-lg mx-auto"
-    >
-      <CarouselContent>
-        {movies.map(movie => (
-          <CarouselItem key={movie.id} className="md:basis-1/2 lg:basis-1/3">
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex flex-col items-center justify-center">
-                  <MovieCard title={movie.title} courseTitle={movie.courseTitle} image={movie.image} id={0} />
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+    <div className="space-y-10">
+      {categories.map((category) => (
+        <div key={category.title} className="space-y-5">
+          <h2 className="text-2xl font-semibold">{category.title}</h2>
+          <Carousel
+            opts={{
+              align: "start",
+              slidesToScroll: 1, 
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="flex gap-4">
+              {category.courses.map((course, index) => (
+                <CarouselItem key={index} className="w-1/3">
+                  <Card className="h-full">
+                    <CardContent className="p-4 flex flex-col items-center">
+                      <Image
+                        src={course.image}
+                        alt={course.name}
+                        width={120}
+                        height={60}
+                        className="rounded-md"
+                      />
+                      <h3 className="mt-2 text-center text-lg font-semibold">{course.name}</h3>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-gray-300 dark:bg-slate-700 rounded-full shadow-lg" />
+            <CarouselNext className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-gray-300 dark:bg-slate-700 rounded-full shadow-lg" />
+          </Carousel>
+        </div>
+      ))}
+    </div>
   );
 };
 
-export default MovieCarousel;
+export default CourseCarousel;
