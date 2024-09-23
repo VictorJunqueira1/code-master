@@ -30,7 +30,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div>
             <div className="hidden lg:block">
-                <nav className="relative z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-950 dark:border-gray-700">
+                <nav className="relative z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700">
                     <div className="px-3 py-3 lg:px-5 lg:pl-3">
                         <div className="flex items-center justify-between">
                             <div className="flex items-center justify-start rtl:justify-end">
@@ -49,8 +49,8 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
                     </div>
                 </nav>
                 <div className="flex">
-                    <aside id="logo-sidebar" className="w-60 min-h-screen pt-4 bg-white border-r border-gray-200 dark:bg-gray-950 dark:border-gray-700">
-                        <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-950">
+                    <aside id="logo-sidebar" className="w-60 min-h-screen pt-4 bg-white border-r border-gray-200 dark:bg-slate-900 dark:border-gray-700">
+                        <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-slate-900">
                             <ul className="space-y-2 font-semibold">
                                 {components.map(component => (
                                     <li key={component.title}>
@@ -67,13 +67,13 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
                             </ul>
                         </div>
                     </aside>
-                    <main className="min-h-screen p-4 w-full bg-gray-100 dark:bg-slate-950">
+                    <main className="min-h-screen p-4 w-full bg-gray-100 dark:bg-slate-900">
                         {children}
                     </main>
                 </div>
             </div>
             <div className="block lg:hidden min-h-screen">
-                <div className="flex items-center justify-between px-4 py-2 bg-white shadow-md border-b border-gray-200 dark:border-gray-700 lg:hidden dark:bg-slate-950">
+                <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-2 bg-white shadow-md border-b border-gray-200 dark:border-gray-700 dark:bg-slate-950">
                     <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white">
                         Code Master
                     </Link>
@@ -103,7 +103,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
                         </SheetContent>
                     </Sheet>
                 </div>
-                <main className="min-h-screen p-4 w-full bg-gray-100 dark:bg-slate-950">
+                <main className="pt-28 min-h-screen p-4 w-full bg-gray-100 dark:bg-slate-900">
                     {children}
                 </main>
             </div>

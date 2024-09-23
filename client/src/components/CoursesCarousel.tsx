@@ -3,6 +3,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
+import MainLayout from "./Navigation/MainLayout";
 
 const CoursesCarousel = () => {
   const futureProjectIcon = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M10 17l5-5-5-5v3H4v4h6v3zm8-15v18H2V2h16zm-2 2H4v14h12V4z' fill='%23000000'/%3E%3C/svg%3E";
@@ -55,39 +56,43 @@ const CoursesCarousel = () => {
   ];
 
   return (
-    <div className="space-y-10 relative">
-      {categories.map((category) => (
-        <div key={category.title} className="space-y-5">
-          <h2 className="text-2xl font-semibold">{category.title}</h2>
-          <Carousel className="w-full">
-            <CarouselContent className="flex gap-2">
-              {category.courses.map((course, index) => (
-                <CarouselItem key={index} className="basis-1/2 md:basis-1/3 xl:basis-1/4">
-                  <Link href={course.link} className="cursor-pointer">
-                    <Card className="h-full">
-                      <CardContent className="p-4 flex flex-col items-center hover:scale-110 duration-200 transition-all">
-                        <Image
-                          src={course.svg || futureProjectIcon}
-                          alt={course.name}
-                          width={120}
-                          height={10}
-                          className="rounded-md"
-                        />
-                        <h3 className="mt-2 text-center text-lg font-semibold text-black dark:text-white">
-                          {course.name}
-                        </h3>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-gray-300 dark:bg-slate-700 rounded-full shadow-lg" />
-            <CarouselNext className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-gray-300 dark:bg-slate-700 rounded-full shadow-lg" />
-          </Carousel>
+    <>
+      <MainLayout>
+        <div className="space-y-10 relative">
+          {categories.map((category) => (
+            <div key={category.title}>
+              <h2 className="text-2xl font-semibold">{category.title}</h2>
+              <Carousel className="w-full">
+                <CarouselContent className="flex gap-2 p-5">
+                  {category.courses.map((course, index) => (
+                    <CarouselItem key={index} className="basis-1/2 md:basis-1/3 xl:basis-1/4">
+                      <Link href={course.link} className="cursor-pointer">
+                        <Card className="h-full">
+                          <CardContent className="p-4 flex flex-col hover:scale-105 duration-200 transition-all hover:border-gray-100 dark:hover:border-blue-700 items-center dark:bg-slate-800 h-full border dark:border-gray-700 rounded-md">
+                            <Image
+                              src={course.svg || futureProjectIcon}
+                              alt={course.name}
+                              width={120}
+                              height={10}
+                              className="rounded-md"
+                            />
+                            <h3 className="mt-2 text-center text-lg font-semibold text-black dark:text-white">
+                              {course.name}
+                            </h3>
+                          </CardContent>
+                        </Card>
+                      </Link>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-gray-300 dark:bg-slate-700 rounded-full shadow-lg" />
+                <CarouselNext className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-gray-300 dark:bg-slate-700 rounded-full shadow-lg" />
+              </Carousel>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </MainLayout>
+    </>
   );
 };
 
