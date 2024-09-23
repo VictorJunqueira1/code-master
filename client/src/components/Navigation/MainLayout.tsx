@@ -51,10 +51,17 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
                 <div className="flex">
                     <aside id="logo-sidebar" className="w-60 min-h-screen pt-4 bg-white border-r border-gray-200 dark:bg-slate-900 dark:border-gray-700">
                         <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-slate-900">
-                            <ul className="space-y-2 font-semibold">
+                            <ul className="space-y-2 font-normal text-2xl">
                                 {components.map(component => (
                                     <li key={component.title}>
-                                        <Link href={component.href} className={`flex duration-300 transition-all items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${isActive(component.href) ? "bg-blue-600 text-white dark:bg-blue-800" : "dark:hover:text-blue-500 hover:text-blue-500"}`}>
+                                        <Link href={component.href} className={
+                                            `
+                                                flex duration-300 transition-all items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group 
+                                                ${isActive(component.href)
+                                                ? "bg-blue-600 text-white dark:bg-blue-800"
+                                                : "dark:hover:text-blue-500 hover:text-blue-500"
+                                            }`}
+                                        >
                                             {component.title === "Dashboard" && <Grid className="w-5 h-5" />}
                                             {component.title === "Anotações" && <NotebookPen className="w-5 h-5" />}
                                             {component.title === "Cursos" && <LibraryBig className="w-5 h-5" />}
