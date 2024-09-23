@@ -8,11 +8,11 @@ Git/Github - Victor Junqueira
 Victor Junqueira
 
 [Formações] Back-End:
-Node - Laravel: Felipe de Castro
+Node, Express, Nest, PHP, Laravel e C#: Felipe de Castro
 Python - Tiago Braga
-Firebase e C# .NET - Victor Junqueira
+Firebase e .NET - Victor Junqueira
 
 [Formações] Banco de Dados:
-MySQL - Felipe de Castro
-PostgreSQL e RedisDB- Victor Junqueira
+SQL, MySQL e PostgreSQL - Felipe de Castro
+RedisDB - Victor Junqueira
 MongoDB - Tiago Braga

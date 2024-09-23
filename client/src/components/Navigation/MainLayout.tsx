@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Grid, NotebookPen, LibraryBig, Headset, DoorOpen, Menu } from "lucide-react";
+import { Grid, CircleHelp, Headset, DoorOpen, Menu, NotebookPen } from "lucide-react";
 import { ModeToggle } from "../ModeToggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -17,7 +17,7 @@ import {
 const components = [
     { title: "Dashboard", href: "/", description: "Volte ao início da página." },
     { title: "Anotações", href: "/anotations", description: "Confira as suas anotações." },
-    { title: "Cursos", href: "/courses", description: "Veja os cursos disponíveis para você." },
+    { title: "Fórum", href: "/forum", description: "Confira as suas anotações." },
     { title: "Suporte", href: "/support", description: "Entre em contato com nosso suporte." },
     { title: "Sair", href: "/exit", description: "Encerre a sua sessão." }
 ];
@@ -56,7 +56,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
                                     <li key={component.title}>
                                         <Link href={component.href} className={
                                             `
-                                                flex duration-300 transition-all items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group 
+                                                flex duration-300 transition-all items-center p-2 text-gray-900 rounded-lg dark:text-white group 
                                                 ${isActive(component.href)
                                                 ? "bg-blue-600 text-white dark:bg-blue-800"
                                                 : "dark:hover:text-blue-500 hover:text-blue-500"
@@ -64,7 +64,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
                                         >
                                             {component.title === "Dashboard" && <Grid className="w-5 h-5" />}
                                             {component.title === "Anotações" && <NotebookPen className="w-5 h-5" />}
-                                            {component.title === "Cursos" && <LibraryBig className="w-5 h-5" />}
+                                            {component.title === "Fórum" && <CircleHelp className="w-5 h-5" />}
                                             {component.title === "Suporte" && <Headset className="w-5 h-5" />}
                                             {component.title === "Sair" && <DoorOpen className="w-5 h-5" />}
                                             <span className="flex-1 ml-2">{component.title}</span>
