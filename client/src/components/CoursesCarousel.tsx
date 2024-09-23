@@ -70,7 +70,7 @@ const CoursesCarousel = () => {
             <Carousel className="w-full">
               <CarouselContent className="flex gap-2 p-5">
                 {category.courses.map((course, index) => (
-                  <CarouselItem key={index} className="basis-1/3 xl:basis-1/4">
+                  <CarouselItem key={index} className="basis-1/2 md:basis-1/3 xl:basis-1/4">
                     <Link href={course.link} className="cursor-pointer">
                       <Card className="h-full">
                         <CardContent className="p-4 flex flex-col hover:scale-105 duration-200 transition-all hover:border-gray-100 dark:hover:border-blue-700 items-center dark:bg-slate-800 h-full border dark:border-gray-700 rounded-md">
