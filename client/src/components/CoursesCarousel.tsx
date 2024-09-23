@@ -10,15 +10,20 @@ const CoursesCarousel = () => {
 
   const categories = [
     {
+      title: "[Formações] Fundamentos",
+      courses: [
+        { name: "Lógica de Programação", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
+        { name: "Git/Github", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+      ],
+    },
+    {
       title: "[Formações] Front-End",
       courses: [
         { name: "HTML", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
         { name: "CSS", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
         { name: "JavaScript", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-        { name: "Git/Github", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
         { name: "TypeScript", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
         { name: "Tailwind", link: "", svg: "https://www.svgrepo.com/show/354431/tailwindcss-icon.svg" },
-        { name: "React", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
         { name: "Next.js", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
       ],
     },
@@ -28,6 +33,8 @@ const CoursesCarousel = () => {
         { name: "Node.js", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
         { name: "Express.js", link: "", svg: "https://www.svgrepo.com/show/330398/express.svg" },
         { name: "Nest.js", link: "", svg: "https://nestjs.com/img/logo-small.svg" },
+        { name: "PHP", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+        { name: "Laravel", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" },
         { name: "Python", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
         { name: "Firebase", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
         { name: "C# .NET", link: "", svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" },
