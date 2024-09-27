@@ -16,10 +16,10 @@ import {
 
 const components = [
     { title: "Dashboard", href: "/", description: "Volte ao início da página." },
-    { title: "Anotações", href: "/anotations", description: "Confira as suas anotações." },
-    { title: "Fórum", href: "/forum", description: "Confira as suas anotações." },
-    { title: "Suporte", href: "/support", description: "Entre em contato com nosso suporte." },
-    { title: "Sair", href: "/exit", description: "Encerre a sua sessão." }
+    { title: "Anotações", href: "/modules/anotations", description: "Confira as suas anotações." },
+    { title: "Fórum", href: "/modules/forum", description: "Confira as suas anotações." },
+    { title: "Suporte", href: "/modules/support", description: "Entre em contato com nosso suporte." },
+    { title: "Sair", href: "/#", description: "Encerre a sua sessão." }
 ];
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
@@ -56,8 +56,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
                                     <li key={component.title}>
                                         <Link href={component.href} className={
                                             `
-                                                flex duration-300 transition-all items-center p-2 text-gray-900 rounded-lg dark:text-white group 
-                                                ${isActive(component.href)
+                                                flex duration-300 transition-all items-center p-2 text-gray-900 rounded-lg dark:text-white group ${isActive(component.href)
                                                 ? "bg-blue-600 text-white dark:bg-blue-800"
                                                 : "dark:hover:text-blue-500 hover:text-blue-500"
                                             }`}
