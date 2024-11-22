@@ -1,20 +1,3 @@
-type CourseWithDetails = {
-    name: string;
-    description: string;
-    link: string;
-    svg: string;
-    stage: React.ReactNode | number;
-};
-
-type CourseWithoutDetails = {
-    name: string;
-    description: string;
-    link: string;
-    svg: string;
-};
-
-type Course = CourseWithDetails | CourseWithoutDetails;
-
 const futureProjectIcon = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M10 17l5-5-5-5v3H4v4h6v3zm8-15v18H2V2h16zm-2 2H4v14h12V4z' fill='%23000000'/%3E%3C/svg%3E";
 
 export const categories = [
