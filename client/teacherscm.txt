@@ -1,16 +1,17 @@
 PROFESSORES CODE MASTER
 
 [Formações] Fundamentos:
-Lógica de Programação - Tiago Braga
+Lógica de Programação (Python) - Tiago Braga
+Lógica de Programação (C) - Tiago Braga
 Git/Github - Victor Junqueira
 
-[Formações] Front-End: 
+[Formações] Front-End:
 Victor Junqueira
 
 [Formações] Back-End:
-Node, Express, Nest, PHP, Laravel e C#: Felipe de Castro
+Node, Express, Nest, PHP, Laravel: Felipe de Castro
 Python - Tiago Braga
-Firebase e .NET - Victor Junqueira
+Firebase, C# e ASP.NET Core - Victor Junqueira
 
 [Formações] Banco de Dados:
 SQL, MySQL e PostgreSQL - Felipe de Castro
