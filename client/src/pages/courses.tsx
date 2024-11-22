@@ -11,6 +11,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { BookOpen, Search, User, ChevronRight, CheckCircle2 } from 'lucide-react'
 import { MainLayout } from '@/components/MainLayout'
 import { categories } from "@/types/categoriesCourse"
+import Image from 'next/image'
 
 type UserProgress = {
     [key: string]: number;
@@ -129,7 +130,7 @@ export default function CoursesDashboard() {
                                         <Card key={course.name} className="overflow-hidden hover:shadow-lg transition-all duration-300 border-0 bg-white dark:bg-gray-800">
                                             <CardHeader className="p-6 pb-0">
                                                 <div className="flex items-center justify-between mb-4">
-                                                    <img src={course.svg} alt={course.name} className="w-12 h-12" />
+                                                    <Image src={course.svg} alt={course.name} width={1} height={1} className="w-12 h-12" />
                                                     {'stage' in course && (
                                                         <Badge variant="secondary" className="text-xs font-semibold px-2 py-1">
                                                             Etapa {course.stage}
@@ -155,7 +156,7 @@ export default function CoursesDashboard() {
                                                     <span>
                                                         {!course.link ? "Em Breve" :
                                                             userProgress[course.name] === 100 ? "Concluído" :
-                                                                userProgress[course.name] > 0 ? "Continuar Curso" : "Começar Curso"}
+                                                            userProgress[course.name] > 0 ? "Continuar Curso" : "Começar Curso"}
                                                     </span>
                                                     {userProgress[course.name] === 100 ? (
                                                         <CheckCircle2 className="h-4 w-4 ml-2 text-green-500" />
@@ -207,3 +208,4 @@ export default function CoursesDashboard() {
         </MainLayout>
     )
 }
+
